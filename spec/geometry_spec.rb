@@ -16,7 +16,7 @@ describe Geometry::Triangle do
 
   its(:perimeter) { should eq 12}
   its(:area) { should eq 6}
-  its(:angles) { should eq [0.64, 0.93, 1.57]}
+  its(:angles) { should eq [36.87, 53.13, 90.0]}
 
 end
 

@@ -40,7 +40,9 @@ module Geometry
     def angles
       def law_of_cosines(a, b, c)
         cos = ((a ** 2) + (b ** 2) - (c ** 2)).to_f / (2 * a * b).to_f
-        Math.acos(cos).round(2)
+        angle = Math.acos(cos)
+        angle *= (180 / Math::PI)
+        return angle.round(2)
       end
 
       angles = []
@@ -92,4 +94,6 @@ module Geometry
   end
 
 end
+
+
 
