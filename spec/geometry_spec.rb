@@ -6,30 +6,50 @@ describe Geometry::Triangle do
   
   let(:a) { 3}
   let(:b) { 4}
-  let(:c) { 6}
-  let(:perimeter) { 13}
+  let(:c) { 5}
 
   subject { Geometry::Triangle.new(a, b, c) }
 
-  it "should have an area" do
-    subject.area.should eq 0.0
-  end
-
-  # call a method named a on the subject
   its(:a) { should eq 3}
   its(:b) { should eq 4}
+  its(:c) { should eq 5}
 
-  its(:perimeter) { should eq 13}
+  its(:perimeter) { should eq 12}
+  its(:area) { should eq 6}
+  its(:angles) { should eq [36.87, 53.13, 90.0]}
 
-  # same as above
-  # it "should have a perimeter" do
-  #   subject.perimeter.should eq perimeter
-  # end
+end
 
-  # nested test
-  describe "Another triangle" do
-    subject { Geometry::Triangle.new(a, b, c) }
-  end
+
+describe Geometry::Rectangle do
+  
+  let(:length) { 4}
+  let(:width) { 6}
+
+
+  subject { Geometry::Rectangle.new(length, width) }
+
+  its(:length) { should eq 4}
+  its(:width) { should eq 6}
+
+  its(:area) { should eq 24}
+  its(:perimeter) { should eq 20}
+
+end
+
+
+describe Geometry::Circle do
+  
+  let(:radius) { 3}
+
+  subject { Geometry::Circle.new(radius) }
+
+  its(:radius) { should eq 3}
+
+  its(:circumference) { should eq 6 * Math::PI}
+
+  its(:area) { should eq 9 * Math::PI}
+
 end
 
 
